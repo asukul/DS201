@@ -1,0 +1,72 @@
+Intro to Machine Learning : 2 - Classifier, K-Nearest Neighbors Algorithm
+A Quick Introduction to K-Nearest Neighbors Algorithm
+K-Nearest Neighbors algorithm (or KNN). KNN algorithm is one of the simplest classification algorithms and it is one of the most used learning algorithms.
+
+ KNN is a non-parametric, lazy learning algorithm. Its purpose is to use a database in which the data points are separated into several classes to predict the classification of a new sample point.
+
+Just for reference, this is “where” KNN is positioned in the algorithm list of sci-kit learn. scikit-learn documentation  (Links to an external site.)(clickable link)
+
+
+When we say a technique is non-parametric, it means that it does not make any assumptions on the underlying data distribution. In other words, the model structure is determined by the data. If you think about it, it’s pretty useful, because in the “real world”, most of the data does not obey the typical theoretical assumptions made (as in linear regression models, for example). Therefore, KNN could and probably should be one of the first choices for a classification study when there is little or no prior knowledge about the distribution data.
+
+KNN is also a lazy algorithm (as opposed to an eager algorithm). It does not use the training data points to do any generalization. In other words, there is no explicit training phaseor it is very minimal. This also means that the training phase is fast. Lack of generalization means that KNN keeps all the training data. To be more exact, all (or most) the training data is needed during the testing phase.
+
+KNN Algorithm is based on feature similarity: How closely out-of-sample features resemble our training set determines how we classify a given data point:
+
+
+Example of k-NN classification. The test sample (inside circle) should be classified either to the first class of blue squares or to the second class of red triangles. If k = 3 (outside circle) it is assigned to the second class because there are 2 triangles and only 1 square inside the inner circle. If, for example k = 5 it is assigned to the first class (3 squares vs. 2 triangles outside the outer circle).
+KNN can be used for classification — the output is a class membership (predicts a class — a discrete value). An object is classified by a majority vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors. It can also be used for regression — output is the value for the object (predicts continuous values). This value is the average (or median) of the values of its k nearest neighbors.
+
+another sample, Cat or Dog?
+
+
+
+
+
+Based on the characteristics, we can decide whether the unknown animal is a cat or a dog.
+
+
+
+K nearest neighbors is a simple algorithm that stores all available cases (cats and dogs) and classifies new cases (unknown animal) based on a similarity measure or characteristics.
+
+
+
+Image result for knn cat dog
+
+A few Applications and Examples of KNN
+Credit ratings — collecting financial characteristics vs. comparing people with similar financial features to a database. By the very nature of a credit rating, people who have similar financial details would be given similar credit ratings. Therefore, they would like to be able to use this existing database to predict a new customer’s credit rating, without having to perform all the calculations.
+Should the bank give a loan to an individual? Would an individual default on his or her loan? Is that person closer in characteristics to people who defaulted or did not default on their loans?
+In political science — classing a potential voter to a “will vote” or “will not vote”, or to “vote Democrat” or “vote Republican”.
+More advanced examples could include handwriting detection (like OCR), image recognition and even video recognition.
+Some pros and cons of KNN
+Pros:
+
+No assumptions about data — useful, for example, for nonlinear data
+Simple algorithm — to explain and understand/interpret
+High accuracy (relatively) — it is pretty high but not competitive in comparison to better-supervised learning models
+Versatile — useful for classification or regression
+Cons:
+
+Computationally expensive — because of the algorithm stores all of the training data
+High memory requirement
+Stores all (or almost all) of the training data
+Prediction stage might be slow (with big N)
+ 
+
+summary of KNN
+The algorithm can be summarized as:
+
+A positive integer k is specified, along with a new sample
+We select the k entries in our database which are closest to the new sample
+We find the most common classification of these entries
+This is the classification we give to the new sample
+A few other features of KNN:
+
+KNN stores the entire training dataset which it uses as its representation.
+KNN does not learn any model.
+KNN makes predictions just-in-time by calculating the similarity between an input sample and each training instance.
+ref:
+
+https://medium.com/@adi.bronshtein/a-quick-introduction-to-k-nearest-neighbors-algorithm-62214cea29c7
+
+https://www.quora.com/What-type-of-problem-does-a-KNN-algorithm-solve-in-the-real-world
